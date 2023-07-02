@@ -4,6 +4,7 @@ public class Main {
 
     public static tokoGame tokoGame = new tokoGame();
     public static Scanner scan = new Scanner(System.in);
+    public static noticeMenu pemberitahuan = new noticeMenu();
 
     public static void main(String[] args) {
         // TODO Auto-generated method stub
@@ -12,7 +13,8 @@ public class Main {
 
         do {
             int pilihan = pilihMenu();
-            System.out.println("Anda memilih opsi " + pilihan);
+            System.out.println("Anda memilih opsi " + pilihan + "...");
+            System.out.println("");
 
             if (pilihan == 1) {
                 tambahGame();
@@ -24,6 +26,8 @@ public class Main {
                 System.out.println("Tidak ada opsi " + pilihan);
             }
 
+            scan.next();
+            System.out.println("");
             System.out.println("Lanjut? (y/n)");
             lanjut = scan.next();
         } while (lanjut.equals("y"));
@@ -40,7 +44,7 @@ public class Main {
 
     public static void tampilkanKursi() {
         System.out.println("--------------Daftar Game--------------\n");
-        System.out.println("Kode Barang" + "\tNama" + "\t\tHarga\n");
+        System.out.println("Kode Barang" + "\tNama" + "\t\t\tHarga\n");
         for (int i = 0; i < tokoGame.games.size(); i++) {
             System.out.println("Game " + (i + 1) + "\t\t" + tokoGame.games.get(i).getNama() + "\t\t" + tokoGame.games.get(i).getHarga());
         }
@@ -54,19 +58,20 @@ public class Main {
         System.out.println("3. Daftar Pelanggan");
         System.out.println("");
         System.out.print("Masukkan Opsi: ");
-        int pilih = 0;
 
+        int pilih = 0;
         try {
             pilih = scan.nextInt();
         } catch (Exception e) {
-            System.out.println("Inputan salah, mohon masukkan angka");
+            pemberitahuan.warning("Salah input");
         }
-
         return pilih;
     }
 
     public static void tambahGame() {
         game game = new game();
+
+        pemberitahuan.notice();
 
         System.out.println("Masukkan nama game dan harga game");
         scan.nextLine();
@@ -82,7 +87,10 @@ public class Main {
     }
 
     public static void beliGame(){
-        System.out.println("Masukkan pembeli beserta game yang dibeli");
+
+        pemberitahuan.notice("2");
+
+        System.out.println("Masukkan nama pelanggan beserta game yang dibeli");
 
         pelanggan pelanggan = new pelanggan();
         game game = new game();
@@ -101,12 +109,15 @@ public class Main {
     }
 
     public static void daftarPelanggan() {
+
+        pemberitahuan.notice(3);
+
         if (tokoGame.pelanggans.size() == 0) {
-            System.out.println("Belum ada yang membeli game saat ini");
+            pemberitahuan.warning();
         } else {
             System.out.println("Berikut merupakan daftar pelanggan toko game Jaya Yes :");
-            System.out.println("--------------Daftar Pelanggan--------------\n");
-            System.out.println("No. " + "\tNama Pelanggan" + "\t\tNama Game" + "\t\tHarga Game\n");
+            System.out.println("------------------Daftar Pelanggan------------------\n");
+            System.out.println("No. " + "\tNama Pelanggan" + "\t\tNama Game" + "\t\tHarga Game");
         for (int i = 0; i < tokoGame.pelanggans.size(); i++) {
             System.out.println((i + 1) + "\t\t" + tokoGame.pelanggans.get(i).getNama() + "\t\t" + tokoGame.buyedGames.get(i).getNama() + "\t\t" +tokoGame.buyedGames.get(i).getHarga());
 
