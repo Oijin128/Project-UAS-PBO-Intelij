@@ -21,6 +21,7 @@ public class tokoGame {
         pelanggan pelanggan = this.getPelangganName(namap);
         if (game == null) {
             System.out.println("game tidak ditemukan");
+            pelanggans.clear();
         } else if (pelanggan == null) {
             System.out.println("pelanggan tidak ditemukan");
         } else {
