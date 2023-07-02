@@ -1,5 +1,8 @@
 public abstract class notice {
-    public void notice() {}
+
+    public abstract void notice();
+
+    public abstract void opening();
 
     public void warning(){
         System.out.println("");

@@ -1,7 +1,11 @@
 public class noticeMenu extends notice {
+
+    public void opening() {
+        System.out.println("\nMenu Toko Game Jaya Yes (Khusus Admin)");
+        System.out.println("List game yang dijual tersedia dibawah\n");
+    }
     @Override
     public void notice() {
-        super.notice();
         System.out.println("Menu Tambah Game");
     }
 

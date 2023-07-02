@@ -10,7 +10,7 @@ public class Main {
         // TODO Auto-generated method stub
         inittokogame();
         String lanjut = "n";
-
+        pemberitahuan.opening();
         do {
             int pilihan = pilihMenu();
             System.out.println("Anda memilih opsi " + pilihan + "...");
@@ -26,7 +26,6 @@ public class Main {
                 System.out.println("Tidak ada opsi " + pilihan);
             }
 
-            scan.next();
             System.out.println("");
             System.out.println("Lanjut? (y/n)");
             lanjut = scan.next();
@@ -34,15 +33,15 @@ public class Main {
     }
 
     public static void inittokogame() {
-        game game1 = new game("Final Fantasy", 1200000);
-        game game2 = new game("Gran Turismo", 1000000);
-        game game3 = new game("Call of Duty", 1500000);
+        game game1 = new game("Final Fantasy", 120000);
+        game game2 = new game("Gran Turismo", 100000);
+        game game3 = new game("Call of Duty", 150000);
         tokoGame.games.add(game1);
         tokoGame.games.add(game2);
         tokoGame.games.add(game3);
     }
 
-    public static void tampilkanKursi() {
+    public static void tampilkanMenu() {
         System.out.println("--------------Daftar Game--------------\n");
         System.out.println("Kode Barang" + "\tNama" + "\t\t\tHarga\n");
         for (int i = 0; i < tokoGame.games.size(); i++) {
@@ -51,7 +50,7 @@ public class Main {
     }
 
     public static int pilihMenu() {
-        tampilkanKursi();
+        tampilkanMenu();
         System.out.println("\nOpsi :");
         System.out.println("1. Tambah Game");
         System.out.println("2. Pembelian Game");
