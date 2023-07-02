@@ -2,7 +2,6 @@ import java.util.ArrayList;
 
 public class pelanggan {
     private String namap;
-    public ArrayList<game> buyedGames = new ArrayList<game>();
 
     public pelanggan(String namap){
         this.namap = namap;
@@ -20,7 +19,4 @@ public class pelanggan {
         this.namap = namap;
     }
 
-    public void buyingGame(game game) {
-        this.buyedGames.add(game);
-    }
 }

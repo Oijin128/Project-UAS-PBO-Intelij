@@ -16,14 +16,6 @@ public class tokoGame {
         this.games.add(game);
     }
 
-    public void buyGame(pelanggan pelanggan, game game) {
-        String namap = pelanggan.getNama();
-        String namag = game.getNama();
-        int harga = game.getHarga();
-        this.pelanggans.add(pelanggan);
-        this.buyedGames.add(game);
-    }
-
     public void buyingGame(String namap, String namag) {
         game game = this.getNameGame(namag);
         pelanggan pelanggan = this.getPelangganName(namap);
