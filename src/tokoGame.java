@@ -24,7 +24,23 @@ public class tokoGame {
         this.buyedGames.add(game);
     }
 
-    private game getGamebyname(String nama) {
+    public void buyingGame(String namap, String namag) {
+        game game = this.getNameGame(namag);
+        pelanggan pelanggan = this.getPelangganName(namap);
+        if (game == null) {
+            System.out.println("game tidak ditemukan");
+        } else if (pelanggan == null) {
+            System.out.println("pelanggan tidak ditemukan");
+        } else {
+            this.buyedGames.add(game);
+        }
+    }
+
+    private int getPelangganIndex(pelanggan pelanggan) {
+        return this.pelanggans.indexOf(pelanggan);
+    }
+
+    private game getNameGame(String nama) {
         for (game game : this.games) {
             if (game.getNama().equals(nama)) {
                 return game;
@@ -33,5 +49,13 @@ public class tokoGame {
         return null;
     }
 
+    private pelanggan getPelangganName(String nama) {
+        for (pelanggan pelanggan : this.pelanggans) {
+                return pelanggan;
+        }
+        return null;
+    }
 }
+
+
 
