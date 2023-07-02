@@ -96,16 +96,8 @@ public class Main {
         String namag = scan.nextLine();
         game.setNama(namag);
 
-        for (int i = 0; i < tokoGame.games.size(); i++) {
-            if (tokoGame.games.contains(namag)) {
-                int harga = tokoGame.games.get(i).getHarga();
-                game.setHarga(harga);
-            }
-        }
-        System.out.println(pelanggan.getNama());
-        System.out.println(game.getNama());
-        System.out.println(game.getHarga());
-        tokoGame.buyGame(pelanggan, game);
+        tokoGame.pelanggans.add(pelanggan);
+        tokoGame.buyingGame(namap, namag);
     }
 
     public static void daftarPelanggan() {
@@ -117,6 +109,7 @@ public class Main {
             System.out.println("No. " + "\tNama Pelanggan" + "\t\tNama Game" + "\t\tHarga Game\n");
         for (int i = 0; i < tokoGame.pelanggans.size(); i++) {
             System.out.println((i + 1) + "\t\t" + tokoGame.pelanggans.get(i).getNama() + "\t\t" + tokoGame.buyedGames.get(i).getNama() + "\t\t" +tokoGame.buyedGames.get(i).getHarga());
+
         }
     }
     }
