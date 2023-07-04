@@ -27,7 +27,7 @@ public class Main {
             }
 
             System.out.println("");
-            System.out.println("Lanjut? (y/n)");
+            System.out.println("Lanjut? (ketik y untuk lanjut)");
             lanjut = scan.next();
         } while (lanjut.equals("y"));
     }
