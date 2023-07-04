@@ -112,7 +112,6 @@ public class Main {
         String namag = scan.nextLine();
         game.setNama(namag);
 
-        tokoGame.pelanggans.add(pelanggan);
         tokoGame.buyingGame(namap, namag);
     }
 
