@@ -10,8 +10,7 @@ public class tokoGame {
     }
 
     public void addGames(game game) {
-        String namap;
-        namap = game.getNama();
+        String namap = game.getNama();
         int harga = game.getHarga();
         this.games.add(game);
     }
