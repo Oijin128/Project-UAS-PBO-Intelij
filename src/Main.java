@@ -5,6 +5,7 @@ public class Main {
     public static tokoGame tokoGame = new tokoGame();
     public static Scanner scan = new Scanner(System.in);
     public static noticeMenu pemberitahuan = new noticeMenu();
+    public static warningNotice peringatan = new warningNotice();
 
     public static void main(String[] args) {
         // TODO Auto-generated method stub
@@ -71,7 +72,7 @@ public class Main {
         try {
             pilih = scan.nextInt();
         } catch (Exception e) {
-            pemberitahuan.warning("Salah input");
+            peringatan.warning("Salah input");
         }
         return pilih;
     }
@@ -120,7 +121,7 @@ public class Main {
         pemberitahuan.notice(3);
 
         if (tokoGame.pelanggans.size() == 0) {
-            pemberitahuan.warning();
+            peringatan.warning();
         } else {
             System.out.println("Berikut merupakan daftar pelanggan toko game Jaya Yes :");
             System.out.println("------------------Daftar Pelanggan------------------\n");

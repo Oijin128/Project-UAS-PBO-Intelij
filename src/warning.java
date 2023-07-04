@@ -1,2 +1,3 @@
-package PACKAGE_NAME;public class warning {
+public interface warning {
+    void warning();
 }

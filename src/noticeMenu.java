@@ -1,6 +1,7 @@
 public class noticeMenu extends notice {
 
     public void opening() {
+        super.opening();
         System.out.println("\nMenu Toko Game Jaya Yes (Khusus Admin)");
         System.out.println("List game yang dijual tersedia dibawah\n");
     }
@@ -25,11 +26,5 @@ public class noticeMenu extends notice {
         System.out.println("Menu Hapus Game");
     }
 
-    public void warning() {
-        System.out.println("Belum ada yang membeli game saat ini");
-    }
 
-    public void warning(String a) {
-        super.warning();
-    }
 }
