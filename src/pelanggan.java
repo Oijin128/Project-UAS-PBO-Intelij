@@ -8,7 +8,6 @@ public class pelanggan {
     }
 
     public pelanggan() {
-
     }
 
     public  String getNama() {

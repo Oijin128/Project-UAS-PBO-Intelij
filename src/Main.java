@@ -19,8 +19,12 @@ public class Main {
             if (pilihan == 1) {
                 tambahGame();
             } else if (pilihan == 2) {
-                beliGame();
+                updateGame();
             } else if (pilihan == 3) {
+                deletegame();
+            } else if (pilihan == 4) {
+                beliGame();
+            } else if (pilihan == 5) {
                 daftarPelanggan();
             } else {
                 System.out.println("Tidak ada opsi " + pilihan);
@@ -36,6 +40,8 @@ public class Main {
         game game1 = new game("Final Fantasy", 120000);
         game game2 = new game("Gran Turismo", 100000);
         game game3 = new game("Call of Duty", 150000);
+        pelanggan pelanggan1 = new pelanggan("asep");
+        tokoGame.pelanggans.add(pelanggan1);
         tokoGame.games.add(game1);
         tokoGame.games.add(game2);
         tokoGame.games.add(game3);
@@ -43,7 +49,7 @@ public class Main {
 
     public static void tampilkanMenu() {
         System.out.println("--------------Daftar Game--------------\n");
-        System.out.println("Kode Barang" + "\tNama" + "\t\t\tHarga\n");
+        System.out.println("Kode Game" + "\tNama" + "\t\t\tHarga\n");
         for (int i = 0; i < tokoGame.games.size(); i++) {
             System.out.println("Game " + (i + 1) + "\t\t" + tokoGame.games.get(i).getNama() + "\t\t" + tokoGame.games.get(i).getHarga());
         }
@@ -53,8 +59,11 @@ public class Main {
         tampilkanMenu();
         System.out.println("\nOpsi :");
         System.out.println("1. Tambah Game");
-        System.out.println("2. Pembelian Game");
-        System.out.println("3. Daftar Pelanggan");
+        System.out.println("2. Ganti Game");
+        System.out.println("3. Hapus Game");
+        System.out.println("4. Pembelian Game");
+        System.out.println("5. Daftar Pelanggan");
+        System.out.println(tokoGame.pelanggans.get(0).getNama());
         System.out.println("");
         System.out.print("Masukkan Opsi: ");
 
@@ -123,4 +132,66 @@ public class Main {
         }
     }
     }
+
+    public static void deletegame() {
+        pemberitahuan.noticeDelet();
+        System.out.println("apakah anda yakin ingin menghapus game? (ketik 1 untuk konfirmasi)");
+        System.out.print("Jawab : ");
+        int jawab = scan.nextInt();
+
+        if (jawab == 1) {
+            System.out.println("Silakan masukkan nomor yang tertera pada daftar game yang ingin di hapus..");
+            System.out.print("Game no. : ");
+            int a = scan.nextInt();
+            if (a <= tokoGame.games.size()) {
+                System.out.println("Menghapus game " + tokoGame.games.get(a - 1).getNama() + " dengan harga " + tokoGame.games.get(a - 1).getHarga() + " Rupiah...");
+                tokoGame.games.remove(a - 1);
+                System.out.println("Game berhasil dihapus.");
+            } else {
+                System.out.println("Game memang tidak ada");
+            }
+        } else {
+            System.out.println("Keluar dari menu delete...");
+            System.out.println("Beralih ke menu utama.");
+        }
+    }
+
+    public static void updateGame() {
+        pemberitahuan.noticeUpdate();
+        System.out.println("apakah anda yakin ingin mengganti game? (ketik 1 untuk konfirmasi)");
+        System.out.print("Jawab : ");
+        int jawab = scan.nextInt();
+
+        if (jawab == 1) {
+            System.out.println("Silakan masukkan nomor yang tertera pada daftar game yang ingin di ganti..");
+            System.out.print("Game no. : ");
+            int a = scan.nextInt();
+
+            if (a <= tokoGame.games.size()) {
+                System.out.println("Mengganti game " + tokoGame.games.get(a - 1).getNama() + " seharga " + tokoGame.games.get(a - 1).getHarga() + " Rupiah...");
+                System.out.println("Masukkan nama game dan harga game");
+
+                scan.nextLine();
+                System.out.print("Nama game : ");
+                String namag = scan.nextLine();
+
+                System.out.print("harga : ");
+                int harga = scan.nextInt();
+                System.out.println("");
+                game game = new game(namag, harga);
+
+                if (!tokoGame.isGameExist(game.getNama())) {
+                    tokoGame.games.set(a - 1, game);
+                    System.out.println("Game berhasil diganti");
+                } else {
+                    System.out.println("Game sudah ada");
+                }
+            } else {
+                System.out.println("Game tidak ada");
+            }
+        } else {
+            System.out.println("Keluar dari menu delete...");
+            System.out.println("Beralih ke menu utama.");        }
+    }
+
 }

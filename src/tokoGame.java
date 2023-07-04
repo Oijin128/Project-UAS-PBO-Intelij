@@ -10,9 +10,11 @@ public class tokoGame {
     }
 
     public void addGames(game game) {
-        String namap = game.getNama();
-        int harga = game.getHarga();
-        this.games.add(game);
+        if (!isGameExist(game.getNama())) {
+            this.games.add(game);
+        } else {
+            System.out.println("Game sudah ada");
+        }
     }
 
     public void buyingGame(String namap, String namag) {
@@ -26,10 +28,6 @@ public class tokoGame {
         } else {
             this.buyedGames.add(game);
         }
-    }
-
-    private int getPelangganIndex(pelanggan pelanggan) {
-        return this.pelanggans.indexOf(pelanggan);
     }
 
     private game getNameGame(String nama) {
@@ -46,6 +44,16 @@ public class tokoGame {
                 return pelanggan;
         }
         return null;
+    }
+
+    public Boolean isGameExist(String nama) {
+        Boolean isExist = false;
+        for (game game : this.games) {
+            if (game.getNama().equals(nama)) {
+                isExist = true;
+            }
+        }
+        return isExist;
     }
 }
 

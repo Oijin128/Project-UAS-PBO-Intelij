@@ -17,6 +17,14 @@ public class noticeMenu extends notice {
         System.out.println("Menu Daftar Pelanggan");
     }
 
+    public void noticeUpdate() {
+        System.out.println("Menu Ganti Game");
+    }
+
+    public void noticeDelet() {
+        System.out.println("Menu Hapus Game");
+    }
+
     public void warning() {
         System.out.println("Belum ada yang membeli game saat ini");
     }
