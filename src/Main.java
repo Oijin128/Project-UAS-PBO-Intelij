@@ -41,8 +41,6 @@ public class Main {
         game game1 = new game("Final Fantasy", 120000);
         game game2 = new game("Gran Turismo", 100000);
         game game3 = new game("Call of Duty", 150000);
-        pelanggan pelanggan1 = new pelanggan("asep");
-        tokoGame.pelanggans.add(pelanggan1);
         tokoGame.games.add(game1);
         tokoGame.games.add(game2);
         tokoGame.games.add(game3);
@@ -64,7 +62,6 @@ public class Main {
         System.out.println("3. Hapus Game");
         System.out.println("4. Pembelian Game");
         System.out.println("5. Daftar Pelanggan");
-        System.out.println(tokoGame.pelanggans.get(0).getNama());
         System.out.println("");
         System.out.print("Masukkan Opsi: ");
 

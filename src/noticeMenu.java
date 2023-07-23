@@ -9,7 +9,6 @@ public class noticeMenu extends notice {
     public void notice() {
         System.out.println("Menu Tambah Game");
     }
-
     public void notice(String n) {
         System.out.println("Menu Pembelian Game");
     }

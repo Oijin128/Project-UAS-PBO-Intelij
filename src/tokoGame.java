@@ -5,10 +5,6 @@ public class tokoGame {
     public ArrayList<game> buyedGames = new ArrayList<game>();
     public ArrayList<pelanggan> pelanggans = new ArrayList<pelanggan>();
 
-    public void addPelanggan(pelanggan pelanggan) {
-        this.pelanggans.add(pelanggan);
-    }
-
     public void addGames(game game) {
         if (!isGameExist(game.getNama())) {
             this.games.add(game);
